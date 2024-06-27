@@ -4,9 +4,14 @@ of dependencies with ease. There are three types of Dependency Injection: constr
 
 1. Constructor Injection: 
 Dependencies are passed to a class through its constructor. This ensures that the class has all required dependencies to function correctly from the moment of instantiation.
-
 2. Property Injection: 
 Dependencies are set through public properties of a class. This allows for optional dependencies and supports lazy initialization.
-
 3. Method Injection:
 Dependencies are passed to a method when it is called. This is useful when a method requires certain dependencies for specific operations.
+
+- Inversion of Control (IoC) Principle
+
+• IoC is a software design principle that emphasizes decoupling and shifting control of object creation from a class to an external entity, typically an IoC container. 
+• By doing so, classes become more modular, as they don’t need to know how to create their dependencies.
+
+• The IoC principle can be summarized as “Don’t call us; we’ll call you.” Classes no longer actively create instances of their dependencies but rely on the IoC container to provide them when needed.

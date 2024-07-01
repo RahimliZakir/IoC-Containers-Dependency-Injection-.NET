@@ -3,15 +3,23 @@ using Project.WebUI.AppCode;
 
 namespace Project.WebUI.Controllers
 {
-    public class HomeController(IRandomNumberGenerator randomNumberGenerator, IRandomNumberGenerator randomNumberGenerator2) : Controller
+    public class HomeController : Controller
     {
-        readonly IRandomNumberGenerator randomNumberGenerator = randomNumberGenerator;
-        readonly IRandomNumberGenerator randomNumberGenerator2 = randomNumberGenerator2;
+        readonly RandomNumberGenerator randomNumberGenerator;
+        readonly RandomNumberGenerator randomNumberGenerator2;
+        public HomeController(RandomNumberGenerator randomNumberGenerator, RandomNumberGenerator randomNumberGenerator2)
+        {
+            this.randomNumberGenerator = randomNumberGenerator;
+            this.randomNumberGenerator2 = randomNumberGenerator2;
+        }
 
         public IActionResult Index()
         {
-            ViewBag.RandomNumber = randomNumberGenerator.GenerateRandomNumber();
-            ViewBag.RandomNumber2 = randomNumberGenerator2.GenerateRandomNumber();
+            ViewBag.RandomNumber = randomNumberGenerator.Random;
+            ViewBag.RandomNumber2 = randomNumberGenerator2.Random;
+
+            ViewBag.Guid = randomNumberGenerator.Guid;
+            ViewBag.Guid2 = randomNumberGenerator2.Guid;
 
             return View();
         }

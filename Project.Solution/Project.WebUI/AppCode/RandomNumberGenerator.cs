@@ -1,10 +1,20 @@
-﻿namespace Project.WebUI.AppCode
+﻿
+namespace Project.WebUI.AppCode
 {
-    public class RandomNumberGenerator : IRandomNumberGenerator
+    public class RandomNumberGenerator //: IRandomNumberGenerator
     {
-        public string GenerateRandomNumber()
+        public int Random { get; set; }
+        public Guid Guid { get; set; }
+
+        public RandomNumberGenerator()
         {
-            return new Random().Next(24).ToString();
+            this.Random = new Random().Next(25);
+            this.Guid = Guid.NewGuid();
         }
+
+        //public Guid GenerateRandomNumber()
+        //{
+        //    return Guid.NewGuid();
+        //}
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IRandomNumberGenerator
     {
-        string GenerateRandomNumber();
+        Guid GenerateRandomNumber();
     }
 }

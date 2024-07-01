@@ -1,12 +1,13 @@
 using Project.WebUI.AppCode;
-using Project.WebUI.Controllers;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 IServiceCollection services = builder.Services;
 services.AddControllersWithViews();
 
-services.AddSingleton<IRandomNumberGenerator, RandomNumberGenerator>();
+services.AddScoped<RandomNumberGenerator>();
+//services.AddTransient<RandomNumberGenerator>();
+//services.AddSingleton<RandomNumberGenerator>();
 
 WebApplication app = builder.Build();
 IWebHostEnvironment env = builder.Environment;

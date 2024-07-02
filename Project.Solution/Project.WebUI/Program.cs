@@ -5,9 +5,9 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 IServiceCollection services = builder.Services;
 services.AddControllersWithViews();
 
-services.AddScoped<RandomNumberGenerator>();
-//services.AddTransient<RandomNumberGenerator>();
-//services.AddSingleton<RandomNumberGenerator>();
+services.AddScoped<IRandomNumberGenerator, RandomNumberGenerator>();
+//services.AddTransient<IRandomNumberGenerator, RandomNumberGenerator>();
+//services.AddSingleton<IRandomNumberGenerator, RandomNumberGenerator>();
 
 WebApplication app = builder.Build();
 IWebHostEnvironment env = builder.Environment;

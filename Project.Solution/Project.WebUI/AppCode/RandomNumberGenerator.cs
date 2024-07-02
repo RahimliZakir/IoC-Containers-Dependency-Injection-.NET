@@ -1,7 +1,7 @@
 ﻿
 namespace Project.WebUI.AppCode
 {
-    public class RandomNumberGenerator //: IRandomNumberGenerator
+    public class RandomNumberGenerator : IRandomNumberGenerator
     {
         public int Random { get; set; }
         public Guid Guid { get; set; }
@@ -11,10 +11,5 @@ namespace Project.WebUI.AppCode
             this.Random = new Random().Next(25);
             this.Guid = Guid.NewGuid();
         }
-
-        //public Guid GenerateRandomNumber()
-        //{
-        //    return Guid.NewGuid();
-        //}
     }
 }

@@ -1,0 +1,5 @@
+﻿- Use `AddTransient` when you need a new instance of a service for every request or operation.
+
+- Use `AddScoped` when you want to maintain state within the scope of an HTTP request or a defined context.
+
+- Use `AddSingleton` when you want to share a single instance of a service throughout the entire application.

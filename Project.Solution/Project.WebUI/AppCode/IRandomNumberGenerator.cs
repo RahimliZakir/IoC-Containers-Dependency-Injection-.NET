@@ -2,6 +2,7 @@
 {
     public interface IRandomNumberGenerator
     {
-        Guid GenerateRandomNumber();
+        public int Random { get; set; }
+        public Guid Guid { get; set; }
     }
 }
